@@ -19,3 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+private func handleNavigationBarStyle() {
+    if #available(iOS 15.0, *) {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithTransparentBackground()
+        navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationBarAppearance.backgroundColor = UIColor(named: "AccentColor")
+        
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    }
+}

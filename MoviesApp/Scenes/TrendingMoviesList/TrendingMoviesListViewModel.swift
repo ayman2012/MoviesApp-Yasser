@@ -27,11 +27,11 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
     
     private var moviesList: [MovieItem] = []
     private let page = Page()
-    private let artistApi: NetworkManagerProtocol
+    private let trendingAPI: NetworkManagerProtocol
     
     //MARK:- Initialization
-    init(artistApi: NetworkManagerProtocol = NetworkManager()) {
-        self.artistApi = artistApi
+    init(trendingAPI: NetworkManagerProtocol = NetworkManager()) {
+        self.trendingAPI = trendingAPI
     }
     
     //MARK:- API Call
@@ -40,7 +40,7 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
         
         showLoadingCallBack?(true)
         
-        artistApi.sendRequest(endPoint: ArtistApi.getMovies(page: page.currentPage),
+        trendingAPI.sendRequest(endPoint: TrendingAPI.getMovies(page: page.currentPage),
                               decodingType: TrendingMoviesResponseModel.self) { [weak self] response in
             
             guard let self = self else { return }

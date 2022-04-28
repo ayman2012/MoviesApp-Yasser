@@ -8,11 +8,11 @@
 import Foundation
 import Alamofire
 
-enum ArtistApi {
+enum TrendingAPI {
     case getMovies(page: Int)
 }
 
-extension ArtistApi: RequestBuilder {
+extension TrendingAPI: RequestBuilder {
     var path: String {
         switch self {
         case .getMovies:
