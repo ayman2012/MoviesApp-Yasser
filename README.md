@@ -2,7 +2,7 @@
 
 ## Building And Running The Project (Requirements)
 * Swift 5.0+
-* Xcode 12.5
+* Xcode 13
 * iOS 13.0+
 
 ## Setup Configs
