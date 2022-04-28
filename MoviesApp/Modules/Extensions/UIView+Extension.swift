@@ -22,7 +22,7 @@ extension UIView {
         let view = nib.instantiate(withOwner: self, options: nil).first as? UIView
         return view
     }
-    
+
     @IBInspectable var cornerRadius: Double {
         get {
             return Double(self.layer.cornerRadius)

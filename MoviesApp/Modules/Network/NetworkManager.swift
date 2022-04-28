@@ -11,7 +11,7 @@ import Alamofire
 protocol NetworkManagerProtocol {
     func sendRequest<ResponseType: Decodable>(endPoint: RequestBuilder,
                                               decodingType: ResponseType.Type,
-                                              completion: @escaping (Result<ResponseType, Error>)-> Void)
+                                              completion: @escaping (Result<ResponseType, Error>) -> Void)
 }
 
 class NetworkManager: NetworkManagerProtocol {
@@ -22,7 +22,7 @@ class NetworkManager: NetworkManagerProtocol {
     // MARK: - Network call
     func sendRequest<ResponseType: Decodable>(endPoint: RequestBuilder,
                                               decodingType: ResponseType.Type,
-                                              completion: @escaping (Result<ResponseType, Error>)-> Void) {
+                                              completion: @escaping (Result<ResponseType, Error>) -> Void) {
 
         guard let url =  URL.init(string: endPoint.baseURL + endPoint.path) else {
             completion(.failure(NetworkFailure.generalFailure))

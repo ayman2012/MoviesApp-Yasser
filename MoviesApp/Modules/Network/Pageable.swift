@@ -24,5 +24,3 @@ final class Page {
         maxPages = 5
     }
 }
-
-

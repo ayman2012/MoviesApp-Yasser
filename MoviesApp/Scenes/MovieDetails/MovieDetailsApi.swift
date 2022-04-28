@@ -36,4 +36,3 @@ extension MovieDetailsApi: RequestBuilder {
         }
     }
 }
-
