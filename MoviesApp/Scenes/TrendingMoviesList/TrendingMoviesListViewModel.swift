@@ -15,6 +15,7 @@ protocol TrendingMoviesListViewModelProtocol {
     func getNumberOfItems() -> Int
     func getMovie(for index: Int) -> MovieItem?
     func prefetchItemsAt(indexPaths: [IndexPath])
+    func showMovieDetails(for movieIndex: Int)
 }
 
 class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
@@ -61,6 +62,11 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
     
     func getMovie(for index: Int) -> MovieItem? {
         return moviesList[safe: index]
+    }
+    
+    func showMovieDetails(for movieIndex: Int) {
+        guard let movieId = moviesList[safe: movieIndex]?.id else { return }
+        try? AppNavigator().push(.movieDetails(movieId))
     }
 }
 

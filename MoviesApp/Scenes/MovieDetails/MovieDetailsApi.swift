@@ -16,7 +16,7 @@ extension MovieDetailsApi: RequestBuilder {
     var path: String {
         switch self {
         case let .getMovieDetails(movieId):
-            return "movies/\(movieId)"
+            return "movie/\(movieId)"
         }
     }
 

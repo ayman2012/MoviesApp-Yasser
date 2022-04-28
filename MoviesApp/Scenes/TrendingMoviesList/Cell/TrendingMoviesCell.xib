@@ -33,31 +33,31 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="- -" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMg-wy-iBl">
-                                <rect key="frame" x="237.5" y="10" width="203.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="237.5" y="20" width="203.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- -" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZX-MG-Vhm">
-                                <rect key="frame" x="237.5" y="50.5" width="203.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="237.5" y="54" width="203.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="BZX-MG-Vhm" firstAttribute="trailing" secondItem="UMg-wy-iBl" secondAttribute="trailing" id="3gw-Ao-eat"/>
                             <constraint firstAttribute="bottom" secondItem="GBg-3l-drJ" secondAttribute="bottom" constant="10" id="6z4-az-5x6"/>
                             <constraint firstItem="BZX-MG-Vhm" firstAttribute="leading" secondItem="UMg-wy-iBl" secondAttribute="leading" id="CLX-dj-obY"/>
-                            <constraint firstItem="UMg-wy-iBl" firstAttribute="top" secondItem="GBg-3l-drJ" secondAttribute="top" id="ORb-4O-xFG"/>
+                            <constraint firstItem="UMg-wy-iBl" firstAttribute="top" secondItem="GBg-3l-drJ" secondAttribute="top" constant="10" id="ORb-4O-xFG"/>
                             <constraint firstItem="GBg-3l-drJ" firstAttribute="leading" secondItem="jAB-8x-3GC" secondAttribute="leading" constant="10" id="RUu-2u-nlS"/>
                             <constraint firstItem="GBg-3l-drJ" firstAttribute="width" secondItem="jAB-8x-3GC" secondAttribute="width" multiplier="0.45" id="ZgW-zn-qZS"/>
                             <constraint firstItem="UMg-wy-iBl" firstAttribute="leading" secondItem="GBg-3l-drJ" secondAttribute="trailing" constant="20" id="a6z-ab-5cH"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BZX-MG-Vhm" secondAttribute="bottom" constant="20" id="e26-A2-2ZN"/>
                             <constraint firstItem="GBg-3l-drJ" firstAttribute="top" secondItem="jAB-8x-3GC" secondAttribute="top" constant="10" id="jtM-cT-zMZ"/>
                             <constraint firstAttribute="trailing" secondItem="UMg-wy-iBl" secondAttribute="trailing" constant="20" id="rs8-h0-Xxc"/>
-                            <constraint firstItem="BZX-MG-Vhm" firstAttribute="top" secondItem="UMg-wy-iBl" secondAttribute="bottom" constant="20" id="wW5-l3-YtZ"/>
+                            <constraint firstItem="BZX-MG-Vhm" firstAttribute="top" secondItem="UMg-wy-iBl" secondAttribute="bottom" constant="10" id="wW5-l3-YtZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -78,8 +78,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

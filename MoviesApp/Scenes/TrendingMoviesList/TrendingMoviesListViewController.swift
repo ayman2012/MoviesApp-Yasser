@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendingMoviesListViewController: UIViewController {
+class TrendingMoviesListViewController: UIViewController, Loadable {
     
     //MARK:- Outlets
     @IBOutlet private var moviesTableView: UITableView!
@@ -29,18 +29,15 @@ class TrendingMoviesListViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Movies List"
         registerTableViewCell()
         setupTableView()
-
-        viewModel.reloadCallBack = { [weak self] in
-            DispatchQueue.main.async {
-                self?.moviesTableView.reloadData()
-            }
-        }
+        setupCallBacks()
+        
         viewModel.getTrendingMoviesList(newResult: false)
     }
     
-    
+    //MARK:- Utilities
     private func registerTableViewCell() {
         moviesTableView.register(TrendingMoviesCell.nib, forCellReuseIdentifier: TrendingMoviesCell.identifier)
     }
@@ -51,10 +48,25 @@ class TrendingMoviesListViewController: UIViewController {
         moviesTableView.dataSource = self
         moviesTableView.prefetchDataSource = self
     }
+    
+    private func setupCallBacks() {
+        viewModel.reloadCallBack = { [weak self] in
+            DispatchQueue.main.async {
+                self?.moviesTableView.reloadData()
+            }
+        }
+        
+        viewModel.showLoadingCallBack = { [weak self] isShowLoading in
+            self?.showLoading(show: isShowLoading)
+        }
+    }
 }
 
 extension TrendingMoviesListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.showMovieDetails(for: indexPath.row)
+    }
 }
 
 extension TrendingMoviesListViewController: UITableViewDataSource {

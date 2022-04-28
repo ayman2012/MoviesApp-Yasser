@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieDetailsViewController: UIViewController {
+class MovieDetailsViewController: UIViewController, Loadable {
     
     //MARK:- Outlets
     @IBOutlet private var movieTitleLabel: UILabel!
@@ -31,6 +31,7 @@ class MovieDetailsViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Movies Details"
         setupCallBacks()
         viewModel.getMovieDetails()
     }
@@ -39,6 +40,10 @@ class MovieDetailsViewController: UIViewController {
     private func setupCallBacks() {
         viewModel.reloadCallBack = { [weak self] movieDetailsModel in
             self?.updateUI(with: movieDetailsModel)
+        }
+        
+        viewModel.showLoadingCallBack = { [weak self] isShowLoading in
+            self?.showLoading(show: isShowLoading)
         }
     }
     
