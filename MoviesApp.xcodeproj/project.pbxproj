@@ -41,6 +41,7 @@
 		755F7FCB281AA5390044725F /* MockedTrendingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F7FCA281AA5390044725F /* MockedTrendingAPI.swift */; };
 		755F7FCD281AA5F20044725F /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F7FCC281AA5F20044725F /* TestHelper.swift */; };
 		755F7FCF281AA64C0044725F /* TrendingMoviesListMockedJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 755F7FCE281AA64B0044725F /* TrendingMoviesListMockedJson.json */; };
+		755F7FD2281ABB160044725F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 755F7FD1281ABB160044725F /* README.md */; };
 		AB84F9CB26148446B35965C7 /* Pods_MoviesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3074A66CB9D99694E9914FB1 /* Pods_MoviesApp.framework */; };
 		B564239EDEAB3DAB7985DEFE /* Pods_MoviesAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34B447A8B54AE4503C5772F /* Pods_MoviesAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		755F7FCA281AA5390044725F /* MockedTrendingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedTrendingAPI.swift; sourceTree = "<group>"; };
 		755F7FCC281AA5F20044725F /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		755F7FCE281AA64B0044725F /* TrendingMoviesListMockedJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrendingMoviesListMockedJson.json; sourceTree = "<group>"; };
+		755F7FD1281ABB160044725F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F3BF2012AC492AC300827BE /* Pods-MoviesAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesAppTests.release.xcconfig"; path = "Target Support Files/Pods-MoviesAppTests/Pods-MoviesAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C47BFD0C4B94B5346907E218 /* Pods-MoviesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesApp.debug.xcconfig"; path = "Target Support Files/Pods-MoviesApp/Pods-MoviesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D34B447A8B54AE4503C5772F /* Pods_MoviesAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 		75056C662818E75600195E5A = {
 			isa = PBXGroup;
 			children = (
+				755F7FD1281ABB160044725F /* README.md */,
 				75056C712818E75600195E5A /* MoviesApp */,
 				75056C882818E75900195E5A /* MoviesAppTests */,
 				75056C922818E75900195E5A /* MoviesAppUITests */,
@@ -440,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				755F7FD2281ABB160044725F /* README.md in Resources */,
 				755F7FCF281AA64C0044725F /* TrendingMoviesListMockedJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
