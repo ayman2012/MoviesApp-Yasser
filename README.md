@@ -30,7 +30,7 @@ PRODUCT_BUNDLE_IDENTIFIER = yassir.MoviesApp
 * [Command(cmd)] + R - Run app
 
 ## Architecture
-This application uses the Model-View-ViewModel (referred to as MVVM) UI architecture.
+* MVVM Model-View-ViewModel
 
 ## Folders Structure
 * SupportingFiles: Group app shared files, like app delegate, assets, info.plist, ...etc
