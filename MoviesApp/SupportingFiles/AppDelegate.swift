@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewModel = TrendingMoviesListViewModel()
-        window?.rootViewController = TrendingMoviesListViewController.init(with: viewModel)
-        window?.makeKeyAndVisible()
+        _ = AppNavigator(window: window ?? UIWindow())
         return true
     }
 }
