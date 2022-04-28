@@ -36,7 +36,7 @@ class TrendingMoviesListViewController: UIViewController, Loadable {
         setupTableView()
         setupCallBacks()
         
-        viewModel.getTrendingMoviesList(newResult: false)
+        viewModel.getTrendingMoviesList(oldResult: false)
     }
     
     //MARK:- Utilities

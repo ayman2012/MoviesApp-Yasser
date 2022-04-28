@@ -29,7 +29,7 @@ class TrendingMoviesListViewModelTests: XCTestCase {
         }
         
         // When
-        viewModel.getTrendingMoviesList(newResult: false)
+        viewModel.getTrendingMoviesList(oldResult: false)
         
         // Then
         

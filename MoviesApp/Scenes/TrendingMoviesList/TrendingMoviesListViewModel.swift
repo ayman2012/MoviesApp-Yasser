@@ -11,7 +11,7 @@ protocol TrendingMoviesListViewModelProtocol {
     var reloadCallBack: (() -> ())? { get set }
     var errorCallBack: ((Error?) -> ())? { get set }
     var showLoadingCallBack: ((Bool) -> ())? { get set }
-    func getTrendingMoviesList(newResult: Bool) -> Void
+    func getTrendingMoviesList(oldResult: Bool) -> Void
     func getNumberOfItems() -> Int
     func getMovie(for index: Int) -> MovieItem?
     func prefetchItemsAt(indexPaths: [IndexPath])
@@ -35,7 +35,7 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
     }
     
     //MARK:- API Call
-    func getTrendingMoviesList(newResult: Bool) {
+    func getTrendingMoviesList(oldResult: Bool) {
         guard page.shouldLoadMore else { return }
         
         showLoadingCallBack?(true)
@@ -48,7 +48,7 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
     
             switch response {
             case .success(let model):
-                self.handlePaginationLogic(newResult: newResult, moviesListResponse: model)
+                self.handlePaginationLogic(oldResult: oldResult, moviesListResponse: model)
                 self.errorCallBack?(nil)
             case .failure(let error):
                 self.errorCallBack?(error)
@@ -77,17 +77,17 @@ extension TrendingMoviesListViewModel {
     func prefetchItemsAt(indexPaths: [IndexPath]) {
         guard let max = indexPaths.map({ $0.row }).max() else { return }
         if page.currentPage * page.countPerPage <= (max + 1) {
-            getTrendingMoviesList(newResult: true)
+            getTrendingMoviesList(oldResult: false)
             page.currentPage += 1
         }
     }
     
-    private func handlePaginationLogic(newResult: Bool, moviesListResponse: TrendingMoviesResponseModel?) {
+    private func handlePaginationLogic(oldResult: Bool, moviesListResponse: TrendingMoviesResponseModel?) {
         guard let response = moviesListResponse,
               let moviesList = response.results else { return }
         page.maxPages = (response.totalResults ?? 0) / page.countPerPage
         
-        if newResult {
+        if oldResult {
             page.maxPages == 0 ? page.reset() : ()
             self.moviesList = moviesList
             self.reloadCallBack?()
