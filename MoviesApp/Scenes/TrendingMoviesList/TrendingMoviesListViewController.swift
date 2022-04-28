@@ -11,6 +11,8 @@ class TrendingMoviesListViewController: UIViewController, Loadable {
     
     //MARK:- Outlets
     @IBOutlet private var moviesTableView: UITableView!
+    @IBOutlet private var errorLabel: UILabel!
+    @IBOutlet private var errorView: UIView!
 
     
     //MARK:- Properties
@@ -58,6 +60,11 @@ class TrendingMoviesListViewController: UIViewController, Loadable {
         
         viewModel.showLoadingCallBack = { [weak self] isShowLoading in
             self?.showLoading(show: isShowLoading)
+        }
+        
+        viewModel.errorCallBack = { error in
+            self.errorView.isHidden = error == nil
+            self.errorLabel.text = error?.localizedDescription ?? "- -"
         }
     }
 }

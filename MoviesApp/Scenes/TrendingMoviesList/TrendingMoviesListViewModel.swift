@@ -9,7 +9,7 @@ import Foundation
 
 protocol TrendingMoviesListViewModelProtocol {
     var reloadCallBack: (() -> ())? { get set }
-    var errorCallBack: ((Error) -> ())? { get set }
+    var errorCallBack: ((Error?) -> ())? { get set }
     var showLoadingCallBack: ((Bool) -> ())? { get set }
     func getTrendingMoviesList(newResult: Bool) -> Void
     func getNumberOfItems() -> Int
@@ -22,7 +22,7 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
     
     //MARK:- Properties
     var reloadCallBack: (() -> ())?
-    var errorCallBack: ((Error) -> ())?
+    var errorCallBack: ((Error?) -> ())?
     var showLoadingCallBack: ((Bool) -> ())?
     
     private var moviesList: [MovieItem] = []
@@ -49,6 +49,7 @@ class TrendingMoviesListViewModel: TrendingMoviesListViewModelProtocol {
             switch response {
             case .success(let model):
                 self.handlePaginationLogic(newResult: newResult, moviesListResponse: model)
+                self.errorCallBack?(nil)
             case .failure(let error):
                 self.errorCallBack?(error)
             }

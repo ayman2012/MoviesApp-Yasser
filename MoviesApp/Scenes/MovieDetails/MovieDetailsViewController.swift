@@ -14,6 +14,8 @@ class MovieDetailsViewController: UIViewController, Loadable {
     @IBOutlet private var movieDateLabel: UILabel!
     @IBOutlet private var movieDescriptionLabel: UILabel!
     @IBOutlet private var movieImageView: UIImageView!
+    @IBOutlet private var errorLabel: UILabel!
+    @IBOutlet private var errorView: UIView!
     
     //MARK:- Properties
     private var viewModel: MovieDetailsViewModelProtocol
@@ -44,6 +46,11 @@ class MovieDetailsViewController: UIViewController, Loadable {
         
         viewModel.showLoadingCallBack = { [weak self] isShowLoading in
             self?.showLoading(show: isShowLoading)
+        }
+        
+        viewModel.errorCallBack = { error in
+            self.errorView.isHidden = error == nil
+            self.errorLabel.text = error?.localizedDescription ?? "- -"
         }
     }
     

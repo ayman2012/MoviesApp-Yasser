@@ -10,7 +10,7 @@ import Foundation
 protocol MovieDetailsViewModelProtocol {
     var reloadCallBack: ((MovieDetailsUIModel) -> ())? { get set }
     var showLoadingCallBack: ((Bool) -> ())? { get set }
-    var errorCallBack: ((Error) -> ())? { get set }
+    var errorCallBack: ((Error?) -> ())? { get set }
     func getMovieDetails()
 }
 
@@ -21,7 +21,7 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     private let movieId: Int
     var reloadCallBack: ((MovieDetailsUIModel) -> ())?
     var showLoadingCallBack: ((Bool) -> ())?
-    var errorCallBack: ((Error) -> ())?
+    var errorCallBack: ((Error?) -> ())?
 
     //MARK:- Initialization
     init(movieId: Int, movieDetailsApi: NetworkManagerProtocol = NetworkManager()) {
@@ -43,6 +43,7 @@ class MovieDetailsViewModel: MovieDetailsViewModelProtocol {
             case .success(let model):
                 let moviesDetailsUIModel = self.mapMovieDetailsResponseToUIModel(responseModel: model)
                 self.reloadCallBack?(moviesDetailsUIModel)
+                self.errorCallBack?(nil)
             case .failure(let error):
                 self.errorCallBack?(error)
             }
