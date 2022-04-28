@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        handleNavigationBarStyle()
         window = UIWindow(frame: UIScreen.main.bounds)
         _ = AppNavigator(window: window ?? UIWindow())
         return true
